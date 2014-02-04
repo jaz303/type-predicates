@@ -1,17 +1,20 @@
+var toString = Object.prototype.toString;
+
 exports.isString = function(thing) {
-	return typeof thing === 'string';
+	return toString.call(thing) === '[object String]';
 }
 
 exports.isNumber = function(thing) {
-	return typeof thing === 'number';
+	return toString.call(thing) === '[object Number]';
 }
 
 exports.isInteger = function(thing) {
-	return typeof thing === 'number' && ((thing | 0) === thing);
+	return (toString.call(thing) === '[object Number]')
+			&& ((thing | 0) === (0 + thing));
 }
 
 exports.isBoolean = function(thing) {
-	return typeof thing === 'boolean';
+	return toString.call(thing) === '[object Boolean]';
 }
 
 exports.isArray = function(thing) {

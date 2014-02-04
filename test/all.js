@@ -11,7 +11,13 @@ test(function(assert) {
 		[function() {}, 'isFunction', 'isNotNull', 'isDefined', 'exists'],
 		[null, 'isNull', 'isDefined'],
 		[{}, 'isObject', 'isDefined', 'isNotNull', 'exists'],
-		[undefined, 'isUndefined', 'isNotNull']
+		[undefined, 'isUndefined', 'isNotNull'],
+
+		[new String("floogle"), 'isString', 'isObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Number(123.45), 'isNumber', 'isObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Number(123), 'isNumber', 'isInteger', 'isObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Boolean(true), 'isBoolean', 'isObject', 'isNotNull', 'isDefined', 'exists']
+
 	].forEach(function(example) {
 
 		var value = example.shift();

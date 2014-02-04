@@ -12,7 +12,7 @@ Most of these should be self-explanatory:
 
 #### `isInteger(thing)`
 
-`isNumber(thing) && ((thing | 0) === thing)`
+`isNumber(thing) && ((thing | 0) === (0 + thing))`
 
 #### `isBoolean(thing)`
 
@@ -36,4 +36,8 @@ Most of these should be self-explanatory:
 
 ## TODO
 
-Still to handle object instances of primitives e.g. `new String('whyowhyowhy')`.
+I'm not happy with `isObject()` - it currently detects `typeof Object` modulo `Array` instances and `null`; object-wrapped primitives return `true`. Current idea is to split into two or three; names are still debatable:
+
+  * isObject: `typeof thing === 'object'`
+  * ???: `not null && (typeof thing === 'object')`
+  * isPureObject: `isObject(thing) && not null && not wrapped primitive && not array`
