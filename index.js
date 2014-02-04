@@ -43,3 +43,7 @@ exports.isDefined = function(thing) {
 exports.isUndefined = function(thing) {
 	return typeof thing === 'undefined';
 }
+
+exports.isPresent = function(thing) {
+	return (thing !== null) && (typeof thing !== 'undefined');
+}

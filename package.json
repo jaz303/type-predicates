@@ -1,0 +1,27 @@
+{
+  "name": "type-predicates",
+  "version": "0.0.0",
+  "description": "Type-checking functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -e; for i in test/*.js; do node $i; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaz303/type-predicates.git"
+  },
+  "keywords": [
+    "type",
+    "checking",
+    "predicates"
+  ],
+  "author": "Jason Frame <jason@onehackoranother> (http://jasonframe.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaz303/type-predicates/issues"
+  },
+  "homepage": "https://github.com/jaz303/type-predicates",
+  "devDependencies": {
+    "tape": "~2.4.2"
+  }
+}
