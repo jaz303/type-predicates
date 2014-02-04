@@ -44,6 +44,6 @@ exports.isUndefined = function(thing) {
 	return typeof thing === 'undefined';
 }
 
-exports.isPresent = function(thing) {
+exports.exists = function(thing) {
 	return (thing !== null) && (typeof thing !== 'undefined');
 }

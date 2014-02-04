@@ -3,14 +3,14 @@ var test = require('tape'),
 
 test(function(assert) {
 
-	[	[1, 'isNumber', 'isInteger', 'isNotNull', 'isDefined', 'isPresent'],
-		[1.23, 'isNumber', 'isNotNull', 'isDefined', 'isPresent'],
-		[true, 'isBoolean', 'isNotNull', 'isDefined', 'isPresent'],
-		["foobar", 'isString', 'isNotNull', 'isDefined', 'isPresent'],
-		[[1,2,3], 'isArray', 'isNotNull', 'isDefined', 'isPresent'],
-		[function() {}, 'isFunction', 'isNotNull', 'isDefined', 'isPresent'],
+	[	[1, 'isNumber', 'isInteger', 'isNotNull', 'isDefined', 'exists'],
+		[1.23, 'isNumber', 'isNotNull', 'isDefined', 'exists'],
+		[true, 'isBoolean', 'isNotNull', 'isDefined', 'exists'],
+		["foobar", 'isString', 'isNotNull', 'isDefined', 'exists'],
+		[[1,2,3], 'isArray', 'isNotNull', 'isDefined', 'exists'],
+		[function() {}, 'isFunction', 'isNotNull', 'isDefined', 'exists'],
 		[null, 'isNull', 'isDefined'],
-		[{}, 'isObject', 'isDefined', 'isNotNull', 'isPresent'],
+		[{}, 'isObject', 'isDefined', 'isNotNull', 'exists'],
 		[undefined, 'isUndefined', 'isNotNull']
 	].forEach(function(example) {
 

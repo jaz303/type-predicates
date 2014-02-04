@@ -30,7 +30,7 @@ Most of these should be self-explanatory:
 
 #### `isUndefined(thing)`
 
-#### `isPresent(thing)`
+#### `exists(thing)`
 
 `isNotNull(thing) && isDefined(thing)`
 
