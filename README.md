@@ -26,6 +26,10 @@ Most of these should be self-explanatory:
 
 #### `isObject(thing)`
 
+`(typeof thing === 'object') && (thing !== null) && (!Array.isArray(thing))`
+
+__NOTE:__ not happy with this one, see below.
+
 #### `isDefined(thing)`
 
 #### `isUndefined(thing)`
