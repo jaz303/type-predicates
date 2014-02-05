@@ -1,65 +1,67 @@
 var toString = Object.prototype.toString;
 
 exports.isString = function(thing) {
-	return toString.call(thing) === '[object String]';
+    return toString.call(thing) === '[object String]';
 }
 
 exports.isNumber = function(thing) {
-	return toString.call(thing) === '[object Number]';
+    return toString.call(thing) === '[object Number]';
 }
 
 exports.isInteger = function(thing) {
-	return (toString.call(thing) === '[object Number]')
-			&& ((thing | 0) === (0 + thing));
+    return (toString.call(thing) === '[object Number]')
+        && ((thing | 0) === (thing + 0));
 }
 
 exports.isBoolean = function(thing) {
-	return toString.call(thing) === '[object Boolean]';
+    return toString.call(thing) === '[object Boolean]';
 }
 
 exports.isArray = function(thing) {
-	return Array.isArray(thing);
+    return Array.isArray(thing);
 }
 
 exports.isFunction = function(thing) {
-	return typeof thing === 'function';
+    return typeof thing === 'function';
 }
 
 exports.isNull = function(thing) {
-	return thing === null;
+    return thing === null;
 }
 
 exports.isNotNull = function(thing) {
-	return thing !== null;
+    return thing !== null;
 }
 
 exports.isObject = function(thing) {
-	return (thing !== null) && (typeof thing === 'object');
+    return (thing !== null)
+        && (typeof thing === 'object');
 }
 
 exports.isPlainObject = function(thing) {
-	return (typeof thing === 'object')
-		&& (thing !== null)
-		&& (!Array.isArray(thing));
+    return (typeof thing === 'object')
+        && (thing !== null)
+        && !Array.isArray(thing);
 }
 
 exports.isPlainObjectStrict = function(thing) {
-	return (typeof thing === 'object')
-		&& (thing !== null)
-		&& (!Array.isArray(thing))
-		&& !(thing instanceof String)
-		&& !(thing instanceof Number)
-		&& !(thing instanceof Boolean);
+    return (typeof thing === 'object')
+        && (thing !== null)
+        && !Array.isArray(thing)
+        && !(thing instanceof String)
+        && !(thing instanceof Number)
+        && !(thing instanceof Boolean);
 }
 
 exports.isDefined = function(thing) {
-	return typeof thing !== 'undefined';
+    return typeof thing !== 'undefined';
 }
 
 exports.isUndefined = function(thing) {
-	return typeof thing === 'undefined';
+    return typeof thing === 'undefined';
 }
 
 exports.exists = function(thing) {
-	return (thing !== null) && (typeof thing !== 'undefined');
+    return (thing !== null)
+        && (typeof thing !== 'undefined');
 }
