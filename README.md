@@ -26,9 +26,19 @@ Most of these should be self-explanatory:
 
 #### `isObject(thing)`
 
-`(typeof thing === 'object') && (thing !== null) && (!Array.isArray(thing))`
+Use this to check for any non-null object, including arrays or wrapped primitives.
 
-__NOTE:__ not happy with this one, see below.
+`(typeof thing === 'object') && (thing !== null)`
+
+#### `isPlainObject(thing)`
+
+Matches any non-null objects excluding arrays.
+
+`isObject(thing) && !Array.isArray(thing)`
+
+#### `isPlainObjectStrict(thing)`
+
+As `isPlainObject(thing)`, but also excludes wrapped primitives.
 
 #### `isDefined(thing)`
 
@@ -37,11 +47,3 @@ __NOTE:__ not happy with this one, see below.
 #### `exists(thing)`
 
 `isNotNull(thing) && isDefined(thing)`
-
-## TODO
-
-I'm not happy with `isObject()` - it currently detects `typeof Object` modulo `Array` instances and `null`; object-wrapped primitives return `true`. Current idea is to split into two or three; names are still debatable:
-
-  * isObject: `typeof thing === 'object'`
-  * ???: `not null && (typeof thing === 'object')`
-  * isPureObject: `isObject(thing) && not null && not wrapped primitive && not array`

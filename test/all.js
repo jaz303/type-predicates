@@ -7,16 +7,16 @@ test(function(assert) {
 		[1.23, 'isNumber', 'isNotNull', 'isDefined', 'exists'],
 		[true, 'isBoolean', 'isNotNull', 'isDefined', 'exists'],
 		["foobar", 'isString', 'isNotNull', 'isDefined', 'exists'],
-		[[1,2,3], 'isArray', 'isNotNull', 'isDefined', 'exists'],
+		[[1,2,3], 'isArray', 'isObject', 'isNotNull', 'isDefined', 'exists'],
 		[function() {}, 'isFunction', 'isNotNull', 'isDefined', 'exists'],
 		[null, 'isNull', 'isDefined'],
-		[{}, 'isObject', 'isDefined', 'isNotNull', 'exists'],
+		[{}, 'isObject', 'isPlainObject', 'isPlainObjectStrict', 'isDefined', 'isNotNull', 'exists'],
 		[undefined, 'isUndefined', 'isNotNull'],
 
-		[new String("floogle"), 'isString', 'isObject', 'isNotNull', 'isDefined', 'exists'],
-		[new Number(123.45), 'isNumber', 'isObject', 'isNotNull', 'isDefined', 'exists'],
-		[new Number(123), 'isNumber', 'isInteger', 'isObject', 'isNotNull', 'isDefined', 'exists'],
-		[new Boolean(true), 'isBoolean', 'isObject', 'isNotNull', 'isDefined', 'exists']
+		[new String("floogle"), 'isString', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Number(123.45), 'isNumber', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Number(123), 'isNumber', 'isInteger', 'isPlainObject', 'isObject', 'isNotNull', 'isDefined', 'exists'],
+		[new Boolean(true), 'isBoolean', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists']
 
 	].forEach(function(example) {
 

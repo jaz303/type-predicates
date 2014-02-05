@@ -34,9 +34,22 @@ exports.isNotNull = function(thing) {
 }
 
 exports.isObject = function(thing) {
+	return (thing !== null) && (typeof thing === 'object');
+}
+
+exports.isPlainObject = function(thing) {
 	return (typeof thing === 'object')
 		&& (thing !== null)
 		&& (!Array.isArray(thing));
+}
+
+exports.isPlainObjectStrict = function(thing) {
+	return (typeof thing === 'object')
+		&& (thing !== null)
+		&& (!Array.isArray(thing))
+		&& !(thing instanceof String)
+		&& !(thing instanceof Number)
+		&& !(thing instanceof Boolean);
 }
 
 exports.isDefined = function(thing) {
