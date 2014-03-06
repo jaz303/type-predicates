@@ -1,20 +1,18 @@
-var toString = Object.prototype.toString;
-
 exports.isString = function(thing) {
-    return toString.call(thing) === '[object String]';
+    return (typeof thing === 'string') || (thing instanceof String);
 }
 
 exports.isNumber = function(thing) {
-    return toString.call(thing) === '[object Number]';
+    return (typeof thing === 'number') || (thing instanceof Number);
 }
 
 exports.isInteger = function(thing) {
-    return (toString.call(thing) === '[object Number]')
+    return ((typeof thing === 'number') || (thing instanceof Number))
         && ((thing | 0) === (thing + 0));
 }
 
 exports.isBoolean = function(thing) {
-    return toString.call(thing) === '[object Boolean]';
+    return (typeof thing === 'boolean') || (thing instanceof Boolean);
 }
 
 exports.isArray = function(thing) {
@@ -34,8 +32,7 @@ exports.isNotNull = function(thing) {
 }
 
 exports.isObject = function(thing) {
-    return (thing !== null)
-        && (typeof thing === 'object');
+    return (thing !== null) && (typeof thing === 'object');
 }
 
 exports.isPlainObject = function(thing) {
