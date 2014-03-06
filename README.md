@@ -38,11 +38,13 @@ Matches any non-null objects excluding arrays.
 
 #### `isPlainObjectStrict(thing)`
 
-As `isPlainObject(thing)`, but also excludes wrapped primitives.
+As `isPlainObject(thing)`, but also excludes wrapped primitives and regular expressions.
 
 #### `isDefined(thing)`
 
 #### `isUndefined(thing)`
+
+#### `isRegExp(thing)`
 
 #### `exists(thing)`
 
