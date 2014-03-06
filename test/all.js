@@ -16,7 +16,9 @@ test(function(assert) {
 		[new String("floogle"), 'isString', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists'],
 		[new Number(123.45), 'isNumber', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists'],
 		[new Number(123), 'isNumber', 'isInteger', 'isPlainObject', 'isObject', 'isNotNull', 'isDefined', 'exists'],
-		[new Boolean(true), 'isBoolean', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists']
+		[new Boolean(true), 'isBoolean', 'isObject', 'isPlainObject', 'isNotNull', 'isDefined', 'exists'],
+
+		[/foobar/, 'isObject', 'isPlainObject', 'isRegExp', 'isNotNull', 'isDefined', 'exists']
 
 	].forEach(function(example) {
 

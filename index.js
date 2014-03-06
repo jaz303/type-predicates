@@ -50,7 +50,8 @@ exports.isPlainObjectStrict = function(thing) {
         && !Array.isArray(thing)
         && !(thing instanceof String)
         && !(thing instanceof Number)
-        && !(thing instanceof Boolean);
+        && !(thing instanceof Boolean)
+        && !(thing instanceof RegExp);
 }
 
 exports.isDefined = function(thing) {
@@ -59,6 +60,10 @@ exports.isDefined = function(thing) {
 
 exports.isUndefined = function(thing) {
     return typeof thing === 'undefined';
+}
+
+exports.isRegExp = function(thing) {
+    return thing instanceof RegExp;
 }
 
 exports.exists = function(thing) {
